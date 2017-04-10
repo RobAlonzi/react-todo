@@ -5,6 +5,8 @@ const VENDOR_LIBS = [
   "jquery", "foundation-sites"
 ];
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 module.exports = {
 	entry: {
 		vendor: VENDOR_LIBS,
@@ -31,11 +33,16 @@ module.exports = {
 			$ : 'jquery',
 			jQuery: 'jquery',
 
+		}),
+		new webpack.optimize.UglifyJsPlugin({
+			compressor: {
+				warnings:false
+			}
 		})
 	],
 	externals: {
 		foundation: 'Foundation',
 		jquery: 'jQuery'
 	},
-	devtool: "cheap-module-eval-source-map"
+	devtool: process.env.NODE_ENV === "production" ?  undefined : "cheap-module-eval-source-map"
 }
