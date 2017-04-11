@@ -4,10 +4,6 @@ import {connect} from "react-redux";
 import * as actions from "../actions/actions.jsx";
 
 export class TodoSearch extends React.Component {
-	constructor(props){
-		super(props);
-	}
-
 	render(){
 		let { showCompleted, searchText, dispatch } = this.props;
 		return(

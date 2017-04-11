@@ -6,10 +6,6 @@ import * as actions from "../actions/actions.jsx";
 
 
 export class Todo extends React.Component{
-	constructor(props){
-		super(props);
-	}
-
 	render(){
 		let {id, text, completed, createdAt, completedAt, dispatch} = this.props;
 		let todoClassName = completed ? "todo todo-completed" : "todo";

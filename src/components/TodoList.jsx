@@ -4,10 +4,6 @@ import Todo from "./Todo.jsx";
 import TodoAPI from "../api/TodoAPI.jsx";
 
 export class TodoList extends React.Component{
-	constructor(props){
-		super(props);
-	}
-
 	render(){
 		let {todos, showCompleted, searchText } = this.props;
 		let filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText);
